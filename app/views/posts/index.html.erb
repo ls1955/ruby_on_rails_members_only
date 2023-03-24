@@ -1,0 +1,8 @@
+<h1>Posts written by everybody in the clubhouse.</h1>
+
+<% Post.all.each do |post| %>
+  <div>
+    <p>Author: <%= post.author %></p>
+    <p><%= post.story %></p>
+  </div>
+<% end %>
