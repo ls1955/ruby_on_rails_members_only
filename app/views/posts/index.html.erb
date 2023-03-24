@@ -1,7 +1,9 @@
 <div class="body_container">
   <h1>Posts written by everybody in the clubhouse.</h1>
   
-  <div class="button_container">
+  <div class="link_container">
+    <%= link_to "Create post", new_post_path %>
+
     <% if user_signed_in? %>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
     <% else %>

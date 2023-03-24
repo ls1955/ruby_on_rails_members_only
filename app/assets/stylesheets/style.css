@@ -16,11 +16,12 @@
     grid-template-columns: 4fr 1fr;
 }
 
-.button_container {
+.link_container {
     justify-self: flex-end;
 
     display: flex;
     align-items: center;
+    column-gap: 10px;
 }
 
 .main_container {
@@ -36,4 +37,23 @@
 
 .post_container:not(:last-child) {
     margin-bottom: 10px;
+}
+
+form {
+    border: 2px solid black;
+    padding: 10px;
+
+    grid-column: 1 / -1;
+}
+
+.form_row:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+label[for="post_story"] {
+    vertical-align: top;
+}
+
+textarea[name="post[story]"] {
+
 }
