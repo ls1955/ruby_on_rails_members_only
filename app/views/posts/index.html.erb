@@ -1,16 +1,22 @@
-<h1>Posts written by everybody in the clubhouse.</h1>
-
-<% if user_signed_in? %>
-  <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
-<% else %>
-  <%= link_to "Sign in", new_user_session_path %>
-<% end %>
-
-<% Post.all.each do |post| %>
-  <div class="container">
+<div class="body_container">
+  <h1>Posts written by everybody in the clubhouse.</h1>
+  
+  <div class="button_container">
     <% if user_signed_in? %>
-      <p>Author: <%= post.author %></p>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
+    <% else %>
+      <%= link_to "Sign in", new_user_session_path %>
     <% end %>
-    <p><%= post.story %></p>
   </div>
-<% end %>
+  
+  <div class="main_container">
+    <% Post.all.each do |post| %>
+      <div class="post_container">
+        <% if user_signed_in? %>
+          <p><%= post.author %>:</p>
+        <% end %>
+        <p><%= post.story %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

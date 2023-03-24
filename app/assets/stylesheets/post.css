@@ -1,0 +1,39 @@
+:root {
+    padding: 0 100px;
+}
+
+.notice {
+    color: lightgreen;
+}
+
+.alert {
+    color: red;
+}
+
+.body_container {
+    font-size: 1.25rem;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+.button_container {
+    justify-self: flex-end;
+
+    display: flex;
+    align-items: center;
+}
+
+.main_container {
+    border: 5px solid black;
+    padding: 50px;
+    grid-column: 1 / -1;
+}
+
+.post_container {
+    border: 2px solid black;
+    padding: 25px;
+}
+
+.post_container:not(:last-child) {
+    margin-bottom: 10px;
+}
