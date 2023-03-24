@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   # TODO: Set the root path
   # root "articles#index"
-  root "posts#new"
+  root "posts#index"
 end
