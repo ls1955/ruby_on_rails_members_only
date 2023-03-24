@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  # before_action :require_login, only: %i[new create]
+  before_action :authenticate_user!, only: %i[new create]
+
   def index
   end
 
@@ -8,7 +9,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post.save post_params
+    @post = current_user.posts.new post_params
+
+    if @post.save
+      redirect_to posts_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
