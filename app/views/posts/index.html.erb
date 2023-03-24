@@ -1,8 +1,14 @@
 <h1>Posts written by everybody in the clubhouse.</h1>
 
+<% if user_signed_in? %>
+  <%= link_to "Sign out", destroy_user_session_url, method: :delete, data: { turbo_method: :delete } %>
+<% end %>
+
 <% Post.all.each do |post| %>
   <div>
-    <p>Author: <%= post.author %></p>
+    <% if user_signed_in? %>
+      <p>Author: <%= post.author %></p>
+    <% end %>
     <p><%= post.story %></p>
   </div>
 <% end %>
