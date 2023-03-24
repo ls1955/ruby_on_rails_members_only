@@ -1,5 +1,13 @@
 <h1>Create a new story.</h1>
 
+<% if @post.errors.any? %>
+  <ul>
+    <% @post.errors.each do |err| %>
+      <li><%= err.full_message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with model: @post do |form| %>
   <div>
     <%= form.label :author, "Author name:" %>
