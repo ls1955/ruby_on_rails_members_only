@@ -1,0 +1,13 @@
+<h1>Create a new story.</h1>
+
+<%= form_with model: @post do |form| %>
+  <div>
+    <%= form.label :author, "Author name:" %>
+    <%= form.text_field :author %>
+  </div>
+
+  <div>
+    <%= form.label :story, "Write your story:" %>
+    <%= form.text_area :story %>
+  </div>
+<% end %>
