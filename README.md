@@ -12,6 +12,8 @@ A user could have and create many posts.
 ## Getting Started
 To try out the application, first `clone` the repo.
 
-Afterward, `cd` into the local repo and start the Rails server via the command `bin/rails s` (Assuming the Rails and Ruby had already been installed on your computer). 
+Afterward, `cd` into the local repo, migrate the database via the command `bin/rails db:migrate`,
+
+and start the Rails server via the command `bin/rails s` (Assuming the Rails and Ruby had already been installed on your computer). 
 
 Afterward, simply hop on to the browser and goto `localhost:3000` to view the homepage of the application.
