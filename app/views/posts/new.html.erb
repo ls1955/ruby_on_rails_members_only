@@ -1,23 +1,29 @@
-<h1>Create a new story.</h1>
+<div class="body_container">
+  <h1>Create a new story.</h1>
 
-<% if @post.errors.any? %>
-  <ul>
-    <% @post.errors.each do |err| %>
-      <li><%= err.full_message %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-<%= form_with model: @post do |form| %>
-  <div>
-    <%= form.label :author, "Author name:" %>
-    <%= form.text_field :author %>
+  <div class="link_container">
+    <%= link_to "Homepage", posts_path %>
   </div>
-
-  <div>
-    <%= form.label :story, "Write your story:" %>
-    <%= form.text_area :story %>
-  </div>
-
-  <div><%= form.submit %></div>
-<% end %>
+  
+  <% if @post.errors.any? %>
+    <ul>
+      <% @post.errors.each do |err| %>
+        <li><%= err.full_message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  
+  <%= form_with model: @post do |form| %>
+    <div class="form_row">
+      <%= form.label :author, "Author name:" %>
+      <%= form.text_field :author %>
+    </div>
+  
+    <div class="form_row">
+      <%= form.label :story, "Write your story:" %>
+      <%= form.text_area :story, cols: "50", rows: "15" %>
+    </div>
+  
+    <div class="form_row"><%= form.submit %></div>
+  <% end %>
+</div>
